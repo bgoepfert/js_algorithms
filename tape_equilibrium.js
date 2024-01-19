@@ -2,6 +2,8 @@
 // calculating the difference of the absolute sum of two any two sections of the array.
 
 function tapeEquilibrium(A) {
+  if (A.length === 1) return Math.abs(A[0]); // Edge case
+
   let totalSum = A.reduce((prev, curr) => prev + curr, 0);
   let sumFirstPart = 0;
   let sumSecondPart = totalSum;
@@ -38,6 +40,9 @@ console.assert(
   tapeEquilibrium([0, 0, 0, 0, 0]) === 0,
   "Test Failed: [0, 0, 0, 0, 0]"
 );
+
+// Test with a single-element array (edge case):
+console.assert(tapeEquilibrium([5]) === 5, "Test Failed: [5]");
 
 // Test with a two-element array (edge case):
 console.assert(tapeEquilibrium([1, 100]) === 99, "Test Failed: [1, 100]");
