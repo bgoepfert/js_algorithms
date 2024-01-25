@@ -11,8 +11,10 @@ function prefixSum(A, l, r) {
   let prefixArray = new Array(A.length + 1);
   prefixArray[0] = 0;
   for (let i = 1; i < prefixArray.length; i++) {
-    prefixArray[i] = prefixArray[i - 1] + a[i - 1];
+    prefixArray[i] = prefixArray[i - 1] + A[i - 1];
   }
 
-  return prefixArray[r + 1] - p[l];
+  return prefixArray[r + 1] - prefixArray[l];
 }
+
+console.log(prefixSum([1, 7, 11, 32, -3, 8, -17, 2], 0, 7));
