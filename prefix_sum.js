@@ -9,7 +9,7 @@
 // E.g. A = profit/loss per day on investments, we can get the total profit/loss for any day range.
 function prefixSum(A, l, r) {
   let prefixArray = new Array(A.length + 1);
-  prefixArray[0] = 0;
+  prefixArray[0] = 0; // buffer so we don't need to handle edge cases.
   for (let i = 1; i < prefixArray.length; i++) {
     prefixArray[i] = prefixArray[i - 1] + A[i - 1];
   }
