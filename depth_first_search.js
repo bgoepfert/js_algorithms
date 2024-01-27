@@ -18,6 +18,7 @@ function dfs(graph, head, target) {
     const vertex = stack.pop();
 
     if (vertex === target) {
+      result.push(vertex);
       return [vertex, result];
     }
 
